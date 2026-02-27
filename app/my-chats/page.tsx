@@ -15,6 +15,7 @@ import { MdErrorOutline } from "react-icons/md";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { supabase } from "../_lib/supabase";
 import { decryptMessage } from "../_utlis/crypto";
+import { IMessage } from "../_interfaces/IChatResponse";
 
 export default function Page() {
     const { state } = useUserContext();
@@ -71,12 +72,11 @@ export default function Page() {
                         if (convIndex === -1) return prev;
 
                         const updatedChats = [...prev];
-                        const conv = { ...updatedChats[convIndex] };
+                        /* eslint-disable-next-line */
+                        const conv:any = { ...updatedChats[convIndex] };
 
-                        // حدث آخر رسالة
                         conv.messages = [{...newMsg, content : decryptMessage(newMsg.content)}];
 
-                        // شيل الـ conversation من مكانها وحطها الأول
                         updatedChats.splice(convIndex, 1);
                         updatedChats.unshift(conv);
 
