@@ -15,7 +15,7 @@ export default function ChatHeader({ other_user }: { other_user: ChatHeaderProps
     const router = useRouter();
 
     return (
-        <div className="bg-gray-200 border-b ps-1.5 border-gray-300 p-2.5 w-full">
+        <div className="bg-gray-200 border-b ps-1.5 border-gray-300 p-2.5 w-full fixed top-0 left-0 right-0">
             <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                     <button
