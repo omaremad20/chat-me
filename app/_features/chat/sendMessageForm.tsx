@@ -11,15 +11,9 @@ export default function SendMessageForm({ handleInputResize, handleInputChange, 
                     rows={1}
                     onChange={handleInputChange}
                     value={content}
-                    onKeyDown={(e) => {
-                        if (e.key === "Enter" && !e.shiftKey) {
-                            e.preventDefault();
-                            handleFormSubmit();
-                        }
-                    }}
                     onInput={handleInputResize}
                     className="outline-0 w-full p-2 border rounded-md border-gray-300 resize-none no-scrollbar!"
-                    placeholder="Type your message here"
+                    placeholder="Type your message here..."
                 />
                 <button
                     type='button'

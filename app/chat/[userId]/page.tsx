@@ -162,7 +162,7 @@ export default function Page() {
   if (!state.user?.main_id) return <Login />
 
   return (
-    <div className="max-h-screen relative overflow-hidden flex flex-col">
+    <div className="max-h-screen overflow-hidden flex flex-col justify-between items-center">
       <ChatHeader other_user={other_user} />
 
       {initialMessagesRequestStatus === 'error' && <FailedToLoadFullChatState />}

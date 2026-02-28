@@ -1,8 +1,10 @@
+"use client";
+
 import InfiniteScroll from "react-infinite-scroll-component";
 import MessageCard, { IMessage } from "./messageCard";
 
 /* eslint-disable-next-line */
-export default function MessagesContainer({ messages, fetchMoreFn, hasNextPage, currentUserId } : any) {
+export default function MessagesContainer({ messages, fetchMoreFn, hasNextPage, currentUserId }: any) {
     return (
         <div
             id="scrollableDiv"
