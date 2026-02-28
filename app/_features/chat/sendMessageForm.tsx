@@ -25,8 +25,9 @@ export default function SendMessageForm({ handleInputResize, handleInputChange, 
                     type='button'
                     aria-label='Send Message'
                     title='Send Message'
+                    onMouseDown={(e) => e.preventDefault()}
                     onClick={handleFormSubmit}
-                    className="rounded-full bg-[#FF9B51] hover:bg-[#f98b37] cursor-pointer text-[#25343F]  transition-colors ease-in-out self-end  hover:text-black p-3 flex items-center justify-center"
+                    className="rounded-full bg-[#FF9B51] hover:bg-[#f98b37] cursor-pointer text-[#25343F] transition-colors ease-in-out self-end hover:text-black p-3 flex items-center justify-center"
                 >
                     <IoMdSend />
                 </button>

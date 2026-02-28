@@ -13,7 +13,7 @@ export default function MessageCard({ type, message }: { type: "me" | "other_use
         <div className='bg-[#25343F] text-white rounded-md p-2 py-1 space-y-1 mb-2'>
             <p className='font-medium'>{message.content}</p>
             <div className='w-full text-xs flex justify-end items-center'>
-                <time>{formatEgyptianTime(message.created_at)}</time>
+                <time className="font-medium">{handleMessageTime(message.created_at).dayName} &bull; {handleMessageTime(message.created_at).fullDate} &bull; {formatEgyptianTime(message.created_at)}</time>
             </div>
         </div>
     )

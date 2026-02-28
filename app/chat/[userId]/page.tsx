@@ -72,8 +72,6 @@ export default function Page() {
         setInitialMessagesRequestStatus('error');
 
         return;
-      } finally {
-        console.log('fefef')
       }
     }
 
@@ -164,28 +162,19 @@ export default function Page() {
   if (!state.user?.main_id) return <Login />
 
   return (
-    <div className="max-h-screen flex flex-col justify-between items-center" >
+    <div className="h-dvh overflow-hidden flex flex-col">
       <ChatHeader other_user={other_user} />
 
-      {
-        initialMessagesRequestStatus === 'error' &&
-        <FailedToLoadFullChatState />
-      }
+      {initialMessagesRequestStatus === 'error' && <FailedToLoadFullChatState />}
 
-      {
-        initialMessagesRequestStatus === 'success' && messages && messages.length === 0 &&
-        <NoMessagesYetState />
-      }
+      {initialMessagesRequestStatus === 'success' && messages && messages.length === 0 && <NoMessagesYetState />}
 
-      {
-        messages && messages.length > 0 &&
+      {messages && messages.length > 0 &&
         <MessagesContainer
           currentUserId={state.user.main_id}
           fetchMoreFn={fetchMore}
           messages={messages!}
           hasNextPage={messagesPag!.hasNextPage}
-          bottomRef={bottomRef}
-          bottomRefSecond={bottomRefSecond}
         />
       }
 
