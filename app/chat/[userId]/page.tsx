@@ -164,7 +164,7 @@ export default function Page() {
   if (!state.user?.main_id) return <Login />
 
   return (
-    <div className="h-dvh flex flex-col justify-between items-center" >
+    <div className="max-h-screen flex flex-col justify-between items-center" >
       <ChatHeader other_user={other_user} />
 
       {
